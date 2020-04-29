@@ -62,7 +62,7 @@ def paginate_modules(chat_id, page_n: int, module_dict: Dict, prefix, chat=None)
     modulo_page = page_n % max_num_pages
 
     # can only have a certain amount of buttons side by side
-    if len(pairs) > 13:13
+    if len(pairs) > 2:2
         pairs = pairs[modulo_page * 13:13 * (modulo_page + 0)] + [
             
     else:
