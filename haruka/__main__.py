@@ -20,22 +20,9 @@ from haruka.modules.helper_funcs.misc import paginate_modules
 from haruka.modules.translations.strings import tld, tld_help 
 from haruka.modules.connection import connected
 
-PM_START = """Hello {}, my name is {}!
+PM_START = """Hey there! My name is Rose - I'm here to help you manage your groups! Hit /help to find out more about how to use me to my full potential.
 
-You know how hard it is sometimes to manage group so here is the solution for you
-
-I'm group manager bot and Anti-scam for RR Players🃏
-
-Active Anti-scam protection in your BM by this command : 
-/antiscam on 
-
-My owner is [Aditya 🇮🇳](t.me/xditya)
-
-Special thanks to [this person](t.me/denver02) for helping me.
-
-Deploy a bot like me [now](www.github.com/xditya/GroupManager)
-
-Click /help or Help button below to find out more about how to use me to my full potential.
+Want to add me to your chat? [Click here!](http://telegram.me/MissRoseTG_Bot?startgroup=botstart) 
 """
 
 
@@ -139,7 +126,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("I'm alive")
+        update.effective_message.reply_text("Ya! Why Are You Testing Me! I'm Always Alive.!My Only Weapon Is /help")
 
 def send_start(bot, update):
     #Try to remove old message
@@ -153,9 +140,9 @@ def send_start(bot, update):
     first_name = update.effective_user.first_name 
     text = PM_START
 
-    keyboard = [[InlineKeyboardButton(text="🇮🇳 Language", callback_data="set_lang_")]]
+    keyboard = [[InlineKeyboardButton(text="🇺🇸 Choose Your Language", callback_data="set_lang_")]]
     keyboard += [[InlineKeyboardButton(text="🛠 Reporting", callback_data="cntrl_panel_M"), 
-        InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
+        InlineKeyboardButton(text="🆘 Help", callback_data="help_back")]]
 
     update.effective_message.reply_text(PM_START.format(escape_markdown(first_name), bot.first_name), reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
 
@@ -186,7 +173,7 @@ def control_panel(bot, update):
 
         LOGGER.info(query.data)
     else:
-        M_match = "ThaNos is the best bot" #LMAO, don't uncomment
+        M_match = "Hacker X Robot is the best bot" #LMAO, don't uncomment
 
     if M_match:
         text = "*Control panel* 🛠"
